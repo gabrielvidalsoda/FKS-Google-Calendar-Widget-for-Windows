@@ -1,0 +1,41 @@
+{
+  "file_hashes": {
+    "REQUIREMENTS.md": "dc25ed93e305ccc1a4a7d21ff57b6cfc3e6cfdef5f6b30b8f1db173e938826c9",
+    "SETUP.md": "06a51ff1fb3748d391386905ce73c6fcbac9488fd6b25bb48adb5d10141e2689",
+    "TECH-DESIGN.md": "4fac30addc7c9aacf9c97dbbe2cd5f62b9e4a24f754e48b1c311b001885dcbc7",
+    "src/main/agendaStatus.js": "018f8aaa6289297ed54a35076551f8a19ff369d16712c943666aef2fa341fc68",
+    "src/main/auth.js": "2606446ec5d8af2ebbf7742ae81f52669b82ecdc635142fbf4eded95ebabb8ed",
+    "src/main/calendar.js": "d9ef357d6b22d419893b1fee77a43b31da8dc8ae99b378c51fef9e6a55b9d480",
+    "src/main/credentials.js": "6b427736816db79d442841e704278ddc212c007f76abede5aaf6ff3c7baf314f",
+    "src/main/index.js": "70c1f9ecf5cd24300a0c264cab0af16540060ed4fc620f0478f03fc8f49fb711",
+    "src/main/logger.js": "c90ecfce3fa85e6126032bc396da6fc5590f51df137d7c7e2df3fc2d8ae45870",
+    "src/main/trayIcon.js": "800dd351e187eecda707871c47f1ac89e337676010d1d444811539180dd68962",
+    "src/main/windowState.js": "c4e8d6d72fd940c2e812c10f6ff9534981368be2b1eaa1133affc7d00ef3dfa2",
+    "src/preload/preload.js": "765f3d85ed4dccc1e1758164e4b80494327df6065bdf4b74e619f8e816e1275d",
+    "src/renderer/app.js": "1f21b534215dcf2c7cfa767fda6195009ebecbd4d734833a828fedf3f4bb386f",
+    "src/renderer/styles.css": "894e5335346a9256a6ad36969fb3dd86a781672ba3dc6dfdc94c509c427f73be"
+  },
+  "indexed_at_commit": "a6d1549d6b5966af4a66a565dd11d95d8bda68e1",
+  "indexed_at_timestamp": "2026-09-11T13:34:46.455807500+00:00",
+  "languages": {
+    "css": {
+      "calls": 0,
+      "nodes": 62
+    },
+    "javascript": {
+      "calls": 70,
+      "nodes": 60
+    },
+    "markdown": {
+      "calls": 0,
+      "nodes": 46
+    }
+  },
+  "schema_version": 3,
+  "stats": {
+    "total_edges": 113,
+    "total_files": 14,
+    "total_nodes": 168
+  },
+  "vexp_version": "3.1.3"
+}
