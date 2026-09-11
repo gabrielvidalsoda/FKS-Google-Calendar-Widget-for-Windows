@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline';" />
+    <title>FKS Calendar Widget</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header id="titlebar">
+        <span id="titlebar-title">Calendar</span>
+        <button id="refresh-btn" title="Refresh now">⟳</button>
+      </header>
+
+      <div id="signin-screen" class="screen hidden">
+        <p>See your Google Calendar events right here.</p>
+        <button id="signin-btn">Sign in with Google</button>
+        <p id="signin-error" class="error hidden"></p>
+      </div>
+
+      <div id="loading-screen" class="screen hidden">
+        <p>Loading events…</p>
+      </div>
+
+      <div id="agenda-screen" class="screen hidden">
+        <div id="view-toggle" role="tablist">
+          <button id="tab-today" class="tab" role="tab" data-view="today">Hoje</button>
+          <button id="tab-agenda" class="tab" role="tab" data-view="agenda">Agenda</button>
+        </div>
+
+        <div id="today-view">
+          <div id="today-title"></div>
+          <div id="today-status" class="today-status"></div>
+          <div id="today-allday" class="today-allday hidden"></div>
+          <div id="today-grid">
+            <div id="today-grid-inner">
+              <div id="tg-past"></div>
+              <div id="tg-hours"></div>
+              <div id="tg-events"></div>
+              <div id="tg-nowline" class="hidden"><span class="tg-now-dot"></span></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="agenda-view" class="hidden">
+          <div id="agenda-list"></div>
+        </div>
+
+        <p id="agenda-error" class="error hidden"></p>
+        <footer>
+          <button id="signout-btn">Sign out</button>
+        </footer>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+{
+  "_comment": "OAuth 'Desktop app' client for the Google Cloud project. For installed/desktop clients Google does NOT treat the client secret as confidential (https://developers.google.com/identity/protocols/oauth2/native-app) — PKCE is the real protection and the flow in auth.js uses it. This file is committed and bundled into the build on purpose so any user's install can sign in. Override locally in dev with GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET in a .env file.",
+  "clientId": "354936046946-5od7fidpn1gt6k4kggarlqevl68qsgks.apps.googleusercontent.com",
+  "clientSecret": "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"
+}

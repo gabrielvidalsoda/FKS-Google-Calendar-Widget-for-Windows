@@ -222,21 +222,30 @@ billing account required:
    - App name, support email, developer contact email — anything reasonable,
      only Gabriel will ever see this screen.
    - Scope: add `.../auth/calendar.readonly`.
-   - Publishing status: **keep in Testing** (do not publish to Production —
-     publishing a sensitive-scope app triggers Google's verification review,
-     which is unnecessary friction for a single-user personal app).
-   - Test users: add the Google account whose calendar the widget will read.
+   - Publishing status: **Production, unverified** (changed from the original
+     single-user "keep in Testing" plan — the app is now meant for any Google
+     user). Consequences: users see a one-time "Google hasn't verified this
+     app" screen they click through, and Google caps unverified
+     sensitive-scope apps at 100 authorized users. Removing both requires
+     OAuth verification: a domain verified in Search Console, a public
+     homepage + privacy policy on that domain, a 120×120 app logo, a written
+     scope justification, and a demo video. No paid CASA security assessment
+     — that is only for *restricted* scopes, and `calendar.readonly` is
+     *sensitive*. Not yet done.
+   - Test users: only relevant if the status is ever moved back to Testing.
 3. **Create the OAuth client ID** — APIs & Services → Credentials → Create
    Credentials → OAuth client ID → Application type: **Desktop app** → name
-   it (e.g. "Calendar Widget Desktop") → Create. Save the resulting Client ID
-   and Client secret — these get wired into the app's local config (a
-   `.env`/gitignored file, never hardcoded or committed) when the code is
-   built.
+   it (e.g. "Calendar Widget Desktop") → Create. The Client ID and Client
+   secret live in `src/config/oauth.json`, committed and bundled into the
+   build. For an installed/desktop client Google does not treat the secret as
+   confidential (the secret is extractable from any distributed binary
+   anyway) — PKCE in `auth.js` is the real protection. A local `.env`
+   (`GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET`) overrides the bundled file
+   for pointing at a different project in dev.
 
-Caveat worth knowing: refresh tokens issued while the app is in Testing mode
-can expire after 7 days of inactivity — using the widget occasionally will
-naturally avoid this, and if it ever happens the fix is just signing in
-again, not a real problem.
+Caveat worth knowing: in Testing mode refresh tokens can expire after 7 days
+of inactivity; in Production (even unverified) they persist normally, so this
+no longer applies.
 
 ## Sources consulted
 
